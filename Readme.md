@@ -1,13 +1,11 @@
 ## Ev Yapımı UPS / Schottky (Şotki) Diyot ile..
 
-12v 500mah beslemeye sahip Asus modemime yaptığım ev yapımı ups çalışmamı paylaşıyorum.
-<br> Öncelikle anlatılanlar sadece amatör bir çalışma olup örnek amaçlı paylaşılmaktadır. Bu tür uygulamalarda iyice araştırıp veya uzmanlara danışarak uygulama yapmanızı tavsiye ederim.
-<br> Birçok araştırmadan sonra amatör olarak hazırladığım bu düzenek ile modem sadece wifi kullanımı halinde 4 saati aşkın bir sürede çalışmıştır. 
-<br> Batarya, komponent ve diğer ekipmanı Altınkaya isimli bir firmadan aldığım siyah plastik bir kutu içerisine monte ettim. Kutu ile uğraşacağınız bu tür işlemler için bir hobi dril seti edinmenizi tavsiye ederim.
-<br> Faydalı olması dileği ile ..
-
-### Bağlantı Şeması
-![alt text](schema.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12v 500mah beslemeye sahip Asus modemime yaptığım ev yapımı ups çalışmamı paylaşıyorum.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Öncelikle anlatılanlar sadece amatör bir çalışma olup örnek amaçlı paylaşılmaktadır. Bu tür uygulamalarda iyice araştırıp veya uzmanlara danışarak uygulama yapmanızı tavsiye ederim.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Birçok araştırmadan sonra amatör olarak hazırladığım bu düzenek ile modem sadece wifi kullanımı halinde 4 saati aşkın bir sürede çalışmıştır. 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batarya, komponent ve diğer ekipmanı Altınkaya isimli bir firmadan aldığım siyah plastik bir kutu içerisine monte ettim. Kutu ile uğraşacağınız bu tür işlemler için bir hobi dril seti edinmenizi ayrıca tavsiye ederim.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sizde öneri, görüş ve fikirlerinizi paylaşarak bu ve benzeri projelerde bana ve bir çok insana destek olabilirsiniz. Bilgi paylaştıkça çoğalır..
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faydalı olması dileği ile ..
 
 ### Gereksinimler
 - 2 adet 1N5819 schottky diyot (modemin ihtiyacı 1 amper üzerinde olacak ise dayanımı daha yüksek bir diyot seçmekte fayda vardır)
@@ -20,17 +18,24 @@
 - 2 adet 18650 pil yatağı
 - 1 adet switch yada on off button (kullanımı opsiyoneldir)
 
+### Bağlantı Şeması
+![alt text](schema.png)
+
 ### Çalışma Şekli
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Öncelikle; 12v modem adaptöründen gelen akım (S1) şotki diyotundan (D2) geçerek yine modeme gidişi sağlanır. Bu şebeke elektriğinin direk modeme geçişi içindir.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diğer hatta geçecek olursak; 5v adaptörden gelen akım (S2) TP4056 (U1) ile bataryalara yönelir. Batarya ya durumunu gözlemlemek için direk batarya pil göstergesi (LED1) bağlanır.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batarya üzerinden çıkan elektrik ise switch üzerinden (SW1) yükseltici regülatöre (U2) geçer.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regülatör (U2) üzerindeki trimpottan yapılan ayar vasıtasıyla 12V düzeyine çıkan akım diğer şotki diyotuna (D1) geçerek 12v adaptör gücü ile birleşerek modeme gider.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Şotki diyotunun buradaki faydası bataryadan gelen elektiğin pozitifi ile modem adaptörü üzerinden gelen elektiğin pozitifinin birbirlerine akmasını yani ters polarizasyonu engelemektir.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bu durumda aktif-aktif mantık ile 2 farklı akım kaynağından beslenen modem çalışmaktadır. Bu 2 akım kaynağından herhangi biri çekildiğinde modem çalışmaya devam edecektir. 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bizim işimize yaran kısmı elektrik kesintisinde adaptör üzerinden akan akım kesilir fakat aktif olan diğer batarya akımı modemin çalışmaya devamını sağlar.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Son olarak aynı akıma sahip iki güç kaynağından hangisinin öncelikli kullanılacağı konusunda güç kaynaklarının gerilimi büyük olan baskın olmaktadır. 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projemde bunu sağlayabilmek için adaptörü 12v <b>2 amper</b> tercih ettim. Bunu anlamak için; bataryadan gelen akımın gerilimi olan 6400mah ve ayrıca diyelim ki tp4056 (U1) şarj için 1000mah olarak ekstra gerilim gönderiyor olsun, bunlar sırasıyla tp4056 (U1) ile %7, 12v'a yükselirken doğal kayıp olarak %3.24, yükselten regülatör (U2) ile %3 kayıp ve şotki diyotu (D1) üzerinden %1 kayıp ile totalde 12v 1973 mah seviyesinde hesapladım ve <b>2 amper</b> adaptör ilgili batarya gerilimini bastırmakta yeterli olduğunu gözlemledim. (Sağlaması; ((6400 + 1000) / 1.07) / (12 / 3.7) / 1.07 / 1.01 şeklindedir.)
+
+### Fotoğraflar
 ![alt text](front.png)
-<br>Öncelikle; 12v modem adaptöründen gelen akım şotki diyotundan geçerek yine modeme gidişi sağlanır. Bu şebeke elektriğinin direk modeme geçişi içindir.
-<br> Diğer hatta geçecek olursak; 5v adaptörden gelen akım TP4056 ile bataryalara yönelir. Batarya ya durumunu gözlemlemek için direk batarya pil göstergesi bağlanır.
-<br>Batarya üzerinden çıkan elektrik ise switch üzerinden ile yükseltici regülatöre geçer.
-<br>Regülatör üzerindeki trimpottan yapılan ayar vasıtasıyla 12V düzeyine çıkan akım diğer şotki diyotuna geçerek 12v adaptör gücü ile birleşerek modeme gider.
-<br>Şotki diyotunun buradaki faydası bataryadan gelen elektiğin pozitifi ile modem adaptörü üzerinden gelen elektiğin pozitifinin birbirlerine akmasını yani ters polarizasyonu engelemektir. 
-<br>![alt text](top.png)
-<br>Bu durumda aktif-aktif mantık ile 2 farklı akım kaynağından beslenen modem çalışmaktadır. Bu 2 akım kaynağından herhangi biri çekildiğinde modem çalışmaya devam edecektir. 
-<br>Bizim işimize yaran kısmı elektrik kesintisinde adaptör üzerinden akan akım kesilir fakat aktif olan diğer batarya akımı modemin çalışmaya devamını sağlar.
-<br>![alt text](in.png)
+![alt text](top.png)
+![alt text](in.png)
 
 ### Öneri ve Uyarılar
 - Batarya pil göstergesi gayet parlak bir ışığa sahiptir. Işıktan rahatsız olabileceğiniz bir yerde bulunacak ise ekranına küçük bir film parçası ekleyerek ışığı azaltabilirsiniz.
