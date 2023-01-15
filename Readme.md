@@ -13,10 +13,10 @@
 - 2.5mm erkek power jack (2.5mm örnektir, modemin girişindeki jack hangi boyutta ise)
 - TP4056 batarya şarj modülü. (Eğer mikro şarj girişi kullanılmayacaksa yine Usb B, mini yada mikro breadboard modülü eklenebilir)
 - MT3608 Step-up voltaj regülatörü
-- XW228DKFR4 batarya pil göstergesi
+- XW228DKFR4 (spbkbs-10) batarya pil göstergesi (kullanımı opsiyonel)
 - 2 adet 18650 3.7v 3200mah lion pil (mah değeri isteğe göre değişebilir)
 - 2 adet 18650 pil yatağı
-- 1 adet switch yada on off button (kullanımı opsiyoneldir)
+- 1 adet switch yada on off button (kullanımı opsiyonel)
 
 ### Bağlantı Şeması
 ![alt text](schema.png)
@@ -30,7 +30,7 @@
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bu durumda aktif-aktif mantık ile 2 farklı akım kaynağından beslenen modem çalışmaktadır. Bu 2 akım kaynağından herhangi biri çekildiğinde modem çalışmaya devam edecektir. 
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bizim işimize yaran kısmı elektrik kesintisinde adaptör üzerinden akan akım kesilir fakat aktif olan diğer batarya akımı modemin çalışmaya devamını sağlar.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Son olarak aynı akıma sahip iki güç kaynağından hangisinin öncelikli kullanılacağı konusunda güç kaynaklarının gerilimi büyük olan baskın olmaktadır. 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projemde bunu sağlayabilmek için adaptörü 12v <b>2 amper</b> tercih ettim. Bunu anlamak için; bataryadan gelen akımın gerilimi olan 6400mah ve ayrıca diyelim ki tp4056 (U1) şarj için 1000mah olarak ekstra gerilim gönderiyor olsun, bunlar sırasıyla tp4056 (U1) ile %7, 12v'a yükselirken doğal kayıp olarak %3.24, yükselten regülatör (U2) ile %3 kayıp ve şotki diyotu (D1) üzerinden %1 kayıp ile totalde 12v 1973 mah seviyesinde hesapladım ve <b>2 amper</b> adaptör ilgili batarya gerilimini bastırmakta yeterli olduğunu gözlemledim. (Sağlaması; ((6400 + 1000) / 1.07) / (12 / 3.7) / 1.07 / 1.01 şeklindedir.)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projemde bunu sağlayabilmek için adaptörü 12v <b>2 amper</b> tercih ettim. Bunu anlamak için; bataryadan gelen akımın gerilimi olan 6400mah ve ayrıca diyelim ki tp4056 (U1) şarj için 1000mah olarak ekstra gerilim gönderiyor olsun, bunlar sırasıyla tp4056 (U1) ile %7, pil göstergesi ile 5mah, 12v'a yükselirken doğal kayıp olarak %3.24, yükselten regülatör (U2) ile %3 kayıp ve şotki diyotu (D1) üzerinden %1 kayıp ile totalde 12v 1971 mah seviyesinde hesapladım ve <b>2 amper</b> adaptör ilgili batarya gerilimini bastırmakta yeterli olduğunu gözlemledim. (Sağlaması; ((6400 + 1000 - 5) / 1.07) / (12 / 3.7) / 1.07 / 1.01 şeklindedir.)
 
 ### Fotoğraflar
 ![alt text](front.png)
