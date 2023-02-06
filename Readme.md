@@ -1,7 +1,7 @@
 ## Ev Yapımı UPS / Schottky (Şotki) Diyot ile.. 
 
 
-###* 2. sürüm güncellemesi.. (Ocak 2023)
+### * 2. sürüm güncellemesi.. (Ocak 2023)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eski haliyle bataryalar için 5v beslemesi gerekiyordu. TP5100'e yükselterek tek güç kaynağı kullanımı çözüm oldu.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1N5822 şotki diyot güncellemesi ile 3A'e kadar güç kaynağı kullanımındaki ters polarizasyon koruması arttırıldı.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anahtar led batarya göstergesinin önüne alındı. Böylelikle anahtarın kapandığında led sönerek işlevi gözlemlenebilir hale geldi.
