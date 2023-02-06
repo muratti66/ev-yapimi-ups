@@ -13,7 +13,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12v 500mah beslemeye sahip Asus modemime yaptığım ev yapımı ups çalışmamı paylaşıyorum.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Öncelikle anlatılanlar sadece amatör bir çalışma olup örnek amaçlı paylaşılmaktadır. Bu tür uygulamalarda iyice araştırıp veya uzmanlara danışarak uygulama yapmanızı tavsiye ederim.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Birçok araştırmadan sonra amatör olarak hazırladığım bu düzenek ile modem sadece wifi kullanımı halinde 5 saat civarı bir sürede çalışmıştır. 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batarya, komponent ve diğer ekipmanı Altınkaya isimli bir firmadan aldığım siyah plastik bir kutu içerisine monte ettim. Kutu ile uğraşacağınız bu tür işlemler için bir hobi dril seti edinmenizi ayrıca tavsiye ederim.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Batarya, komponent ve diğer ekipmanı Altınkaya isimli bir firmadan aldığım siyah plastik bir kutu (HH-046 numaralı) içerisine monte ettim. Kutu ile uğraşacağınız bu tür işlemler için bir hobi dril seti edinmenizi ayrıca tavsiye ederim.
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sizde öneri, görüş ve fikirlerinizi paylaşarak bu ve benzeri projelerde bana ve bir çok insana destek olabilirsiniz. Bilgi paylaştıkça çoğalır..
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faydalı olması dileği ile ..
 
@@ -24,13 +24,15 @@
 - 2.5mm erkek power jack (2.5mm örnektir, modemin girişindeki jack hangi boyutta ise)
 - TP5100 batarya şarj modülü. 
 - MT3608 Step-up voltaj regülatörü
-- XW228DKFR4 (spbkbs-10) batarya pil göstergesi (kullanımı opsiyonel)
+- XW228DKFR4 (Spbkbs-10) 1S batarya pil göstergesi (kullanımı opsiyonel)
 - 2 adet 18650 3.7v 3200mah lion pil (mah değeri isteğe göre değişebilir)
 - 2 adet 18650 pil yatağı
 - 1 adet dişi ve erkekli lipo pil konnektörü seti
 - 1 adet anahtar yada on off button (kullanımı opsiyonel)
 - 1 adet 16v 1000uf kondansatör (elimde 35v bulunduğu için onu kullandım)
 - 1 adet raspberry pi soğutucu seti (opsiyonel ancak aşırı ısınmanın önüne geçeceği için faydalıdır..)
+- 1 adet 3 x 7 çift taraflı prototip pcb kart
+- 1 adet Altınkaya HH-046 plastik kutu
 
 ### Bağlantı Şeması
 ![alt text](schema_v2.png)
@@ -53,6 +55,7 @@
 
 ### Öneri ve Uyarılar
 - Batarya pil göstergesi gayet parlak bir ışığa sahiptir. Işıktan rahatsız olabileceğiniz bir yerde bulunacak ise ekranına küçük bir film parçası ekleyerek ışığı azaltabilirsiniz.
+- Batarya pil göstergesi bataryanın durumunu şarj olurken normalden 1 kademe daha fazla ve batarya kullanımında 1 kademe daha az gösterebilir. Tam durum için tüm fişleri sökerek (yani adaptör ve modem bağlantısını keserek) tam durumu gözlemlenebilir. Bu küçük sorun için araştırmalarıma devam etmekteyim..
 - Özellikle TP5100 bataryaları şarj ederken ciddi oranda ısınabilmekte olup çipler üzerine bir yada birkaç küçük soğutucu kullanımı faydalı ve gerekli olabilir.
 - MT3608 ile voltaj ayarlamasını yapmadan önce adaptörden gelen voltajı şotki diyotundan geçtikten sonra ölçerek tesbit edin ve akabinde bu regülatörden çıkacak gücü yine diğer diyottan çıktıktan sonra ölçerek ayarlayın, bu şekilde daha net ayarlama yapabilirsiniz.
 - MT3608'den daha yüksek güçte (2, 3 ve 4 amper çıkışı olan regülatörler gibi) regülatörler kullanırsanız modemin ihtiyacından fazla bir gücü sağlayacak ve bataryalar kat ve kat daha hızlı bitebilir.
